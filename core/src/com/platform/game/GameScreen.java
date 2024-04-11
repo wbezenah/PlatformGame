@@ -22,8 +22,6 @@ public class GameScreen implements Screen {
     private OrthographicCamera camera;
     private World world;
     private Box2DDebugRenderer box2DDebugRenderer;
-//    private OrthogonalTiledMapRenderer orthogonalTiledMapRenderer;
-//    private TileMapManager tileMapManager;
     private LevelManager levelManager;
     private PlayerContactListener playerContactListener;
     TouchControl touchControl;
@@ -37,13 +35,8 @@ public class GameScreen implements Screen {
         this.camera.setToOrtho(false, game.getWidth(), game.getHeight());
         this.touchControl = new TouchControl(game.getWidth(), game.getHeight());
 
-
         this.world = new World(new Vector2(0, -9.8f), false);
         this.box2DDebugRenderer = new Box2DDebugRenderer();
-
-//        final String MAP_PATH = "map/map_0.tmx";
-//        this.tileMapManager = new TileMapManager(MAP_PATH, this);
-//        this.orthogonalTiledMapRenderer = tileMapManager.initMap();
 
         this.levelManager = new LevelManager(this);
         this.playerContactListener = new PlayerContactListener(this);

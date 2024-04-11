@@ -9,7 +9,6 @@ public class LevelManager {
     private int currentLevel = 0;
     public TileMapManager tileMapManager;
     public OrthogonalTiledMapRenderer orthogonalTiledMapRenderer;
-    public boolean changingLevel = false;
 
     public LevelManager(GameScreen gameScreen) {
         this.gameScreen = gameScreen;
@@ -23,10 +22,8 @@ public class LevelManager {
     }
 
     public boolean nextLevel() {
-        changingLevel = true;
         if(levelPaths.size <= ++currentLevel) { return false; }
         tileMapManager.setMap(levelPaths.get(currentLevel));
-        changingLevel = false;
 
         return true;
     }
