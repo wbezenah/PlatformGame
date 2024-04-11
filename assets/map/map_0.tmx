@@ -3,15 +3,15 @@
  <tileset firstgid="1" source="colors.tsx"/>
  <layer id="1" name="background" width="40" height="40">
   <data encoding="base64" compression="zlib">
-   eJztltsNwCAMA0N3YP9VO0HLw3GIiE/KFyJcjJBoZtaSV1bkhyE/DPlhyA9DfhioH3u22/Njs+oXPcvp/PpgneUX9T9F3fV/PsuOX+RMN+YXiZcf661VyY8F08/jzivn50GV9ys/zCWT31+faL/Zc5WfTx+W31c9k7WzZ7VvVr8X6HEBXQ==
+   eJztltEJwDAIRE136P6rdoFSjOdZiffArxDzPAi4zGyp4OqG/DDkhyE/DPlhTPBjzjUhPyYRv8o5OuR3f5wx/ar2P9Rb++l/RP2q5jk1vyoy/RhzTsqPAdsvY3ebnB/KpP8rv9jdt15ZnJCf903ll9crC8/OfzkrcmenZ2e/B91KAcU=
   </data>
  </layer>
  <objectgroup id="2" name="objects">
   <object id="1" x="448" y="2304">
-   <polygon points="0,0 192,0 192,-64 0,-64"/>
+   <polygon points="0,0 128,0 128,-64 0,-64"/>
   </object>
   <object id="2" x="768" y="2112">
-   <polygon points="0,0 0,64 192,64 192,0"/>
+   <polygon points="64,0 64,64 192,64 192,0"/>
   </object>
   <object id="4" x="0" y="2432">
    <polygon points="0,0 0,128 1088,128 1088,0"/>
