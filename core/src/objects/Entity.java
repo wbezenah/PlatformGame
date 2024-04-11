@@ -18,6 +18,7 @@ public abstract class Entity {
         this.vy = 0;
         this.speed = 0;
         this.body = body;
+        this.body.setUserData(this);
     }
 
     public boolean isColliding(Entity other) {

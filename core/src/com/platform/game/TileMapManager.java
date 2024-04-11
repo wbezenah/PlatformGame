@@ -18,23 +18,36 @@ import com.badlogic.gdx.physics.box2d.MassData;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.Shape;
 
+import java.util.Objects;
+
 import objects.Player;
 import objects.Token;
 
 public class TileMapManager {
-    private String mapPath;
     private TiledMap tiledMap;
     private GameScreen gameScreen;
+    private OrthogonalTiledMapRenderer orthogonalTiledMapRenderer;
 
-    public TileMapManager(String mapPath, GameScreen gameScreen) {
-        this.mapPath = mapPath;
+    public TileMapManager(GameScreen gameScreen) {
         this.gameScreen = gameScreen;
     }
 
-    public OrthogonalTiledMapRenderer initMap() {
+    public OrthogonalTiledMapRenderer getOrthogonalTiledMapRenderer() {
+        return this.orthogonalTiledMapRenderer;
+    }
+
+    public void init(String mapPath) {
+        if(Objects.nonNull(tiledMap)) { tiledMap.dispose(); }
         tiledMap = new TmxMapLoader().load(mapPath);
         parseObjects(tiledMap.getLayers().get("objects").getObjects());
-        return new OrthogonalTiledMapRenderer(tiledMap);
+        this.orthogonalTiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap);
+    }
+
+    void setMap(String mapPath) {
+        orthogonalTiledMapRenderer.getMap().dispose();
+        tiledMap = new TmxMapLoader().load(mapPath);
+        parseObjects(tiledMap.getLayers().get("objects").getObjects());
+        orthogonalTiledMapRenderer.setMap(tiledMap);
     }
 
     private void parseObjects(MapObjects objects) {

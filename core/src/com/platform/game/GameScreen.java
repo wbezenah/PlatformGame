@@ -7,11 +7,12 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.utils.Array;
 
 import objects.Player;
 import objects.Token;
@@ -21,8 +22,10 @@ public class GameScreen implements Screen {
     private OrthographicCamera camera;
     private World world;
     private Box2DDebugRenderer box2DDebugRenderer;
-    private OrthogonalTiledMapRenderer orthogonalTiledMapRenderer;
-    private TileMapManager tileMapManager;
+//    private OrthogonalTiledMapRenderer orthogonalTiledMapRenderer;
+//    private TileMapManager tileMapManager;
+    private LevelManager levelManager;
+    private PlayerContactListener playerContactListener;
     TouchControl touchControl;
     private Player player;
     private Token token;
@@ -38,15 +41,21 @@ public class GameScreen implements Screen {
         this.world = new World(new Vector2(0, -9.8f), false);
         this.box2DDebugRenderer = new Box2DDebugRenderer();
 
-        final String MAP_PATH = "map/map_0.tmx";
-        this.tileMapManager = new TileMapManager(MAP_PATH, this);
-        this.orthogonalTiledMapRenderer = tileMapManager.initMap();
+//        final String MAP_PATH = "map/map_0.tmx";
+//        this.tileMapManager = new TileMapManager(MAP_PATH, this);
+//        this.orthogonalTiledMapRenderer = tileMapManager.initMap();
+
+        this.levelManager = new LevelManager(this);
+        this.playerContactListener = new PlayerContactListener(this);
+
+        this.world.setContactListener(playerContactListener);
 
     }
 
     public World getWorld() {
         return world;
     }
+    public LevelManager getLevelManager() { return levelManager; }
     public void setPlayer(Player player) { this.player = player; }
     public void setToken(Token token) { this.token = token; }
 
@@ -63,8 +72,8 @@ public class GameScreen implements Screen {
         game.batch.setProjectionMatrix(camera.combined);
 
 
-        orthogonalTiledMapRenderer.setView(camera);
-        orthogonalTiledMapRenderer.render();
+        levelManager.orthogonalTiledMapRenderer.setView(camera);
+        levelManager.orthogonalTiledMapRenderer.render();
 
         game.batch.begin();
         player.render(game.batch);
@@ -72,24 +81,36 @@ public class GameScreen implements Screen {
 
         touchControl.render(game.shapeRenderer);
 
-        box2DDebugRenderer.render(world, camera.combined.scl(PPM));
+//        box2DDebugRenderer.render(world, camera.combined.scl(PPM));
     }
 
+    private boolean destroy = false;
+    public void destroyBodies() {
+        this.destroy = true;
+    }
     private void update() {
+        if(destroy) {
+            Array<Body> bodies = new Array<>();
+            world.getBodies(bodies);
+            for(int i = 0; i < bodies.size; i++) {
+                if(!world.isLocked()) {
+                    world.destroyBody(bodies.get(i));
+                }
+            }
+
+            levelManager.nextLevel();
+            destroy = false;
+        }
         world.step(1 / 60f, 6, 2);
         cameraUpdate();
 
         game.batch.setProjectionMatrix(camera.combined);
-        orthogonalTiledMapRenderer.setView(camera);
+        levelManager.orthogonalTiledMapRenderer.setView(camera);
 
         if(!gameOver) { player.update(); }
 
         if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
             Gdx.app.exit();
-        }
-
-        if(player.isColliding(token)) {
-            gameOver = true;
         }
     }
 
@@ -103,7 +124,7 @@ public class GameScreen implements Screen {
 
     @Override
     public void dispose() {
-        this.tileMapManager.dispose();
+        this.levelManager.dispose();
     }
 
     @Override
