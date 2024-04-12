@@ -28,6 +28,7 @@ public class GameScreen implements Screen {
     private Player player;
     private Token token;
     boolean gameOver = false;
+    private boolean nextLevel = false;
 
     public GameScreen(PlatformGame game) {
         this.game = game;
@@ -77,22 +78,21 @@ public class GameScreen implements Screen {
 //        box2DDebugRenderer.render(world, camera.combined.scl(PPM));
     }
 
-    private boolean destroy = false;
-    public void destroyBodies() {
-        this.destroy = true;
-    }
-    private void update() {
-        if(destroy) {
-            Array<Body> bodies = new Array<>();
-            world.getBodies(bodies);
-            for(int i = 0; i < bodies.size; i++) {
-                if(!world.isLocked()) {
-                    world.destroyBody(bodies.get(i));
-                }
+    private void destroyBodies() {
+        Array<Body> bodies = new Array<>();
+        world.getBodies(bodies);
+        for(int i = 0; i < bodies.size; i++) {
+            if(!world.isLocked()) {
+                world.destroyBody(bodies.get(i));
             }
-
+        }
+    }
+    public void queueNextLevel() { nextLevel = true; }
+    private void update() {
+        if(nextLevel) {
+            destroyBodies();
             levelManager.nextLevel();
-            destroy = false;
+            nextLevel = false;
         }
         world.step(1 / 60f, 6, 2);
         cameraUpdate();

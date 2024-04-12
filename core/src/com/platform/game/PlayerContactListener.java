@@ -19,7 +19,7 @@ public class PlayerContactListener implements ContactListener {
         Object userDataB = contact.getFixtureB().getBody().getUserData();
 
         if(userDataA instanceof Player && userDataB instanceof Token) {
-            gameScreen.destroyBodies();
+            gameScreen.queueNextLevel();
         }
 
     }
