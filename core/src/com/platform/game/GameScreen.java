@@ -30,7 +30,14 @@ public class GameScreen implements Screen {
     boolean gameOver = false;
     private boolean nextLevel = false;
 
+    public GameScreen(PlatformGame game, int initialLevel) {
+        init(game, initialLevel);
+    }
     public GameScreen(PlatformGame game) {
+        init(game, 0);
+    }
+
+    private void init(PlatformGame game, int initialLevel) {
         this.game = game;
         this.camera = new OrthographicCamera();
         this.camera.setToOrtho(false, game.getWidth(), game.getHeight());
@@ -39,11 +46,10 @@ public class GameScreen implements Screen {
         this.world = new World(new Vector2(0, -9.8f), false);
         this.box2DDebugRenderer = new Box2DDebugRenderer();
 
-        this.levelManager = new LevelManager(this);
+        this.levelManager = new LevelManager(this, initialLevel);
         this.playerContactListener = new PlayerContactListener(this);
 
         this.world.setContactListener(playerContactListener);
-
     }
 
     public World getWorld() {
