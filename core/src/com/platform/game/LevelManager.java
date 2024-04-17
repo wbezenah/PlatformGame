@@ -18,7 +18,7 @@ public class LevelManager {
     }
     public static final Array<MapInfo> LEVELS = new Array<>(new MapInfo[]{
             new MapInfo("map/map_0.tmx", "Level1"),
-            new MapInfo("map/map_1.tmx", "Level2")         
+            new MapInfo("map/map_1.tmx", "Level2")
     });
     
     private GameScreen gameScreen;
