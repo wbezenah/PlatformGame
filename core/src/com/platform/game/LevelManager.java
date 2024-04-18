@@ -1,9 +1,10 @@
 package com.platform.game;
 
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import com.badlogic.gdx.utils.Array;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class LevelManager {
     public static class MapInfo {
@@ -16,10 +17,11 @@ public class LevelManager {
         public String getMapPath() { return mapPath; }
         public String getMapName() { return mapName; }
     }
-    public static final Array<MapInfo> LEVELS = new Array<>(new MapInfo[]{
+
+    public static final List<MapInfo> LEVELS = Collections.unmodifiableList(Arrays.asList(
             new MapInfo("map/map_0.tmx", "Level1"),
-            new MapInfo("map/map_1.tmx", "Level2")         
-    });
+            new MapInfo("map/map_1.tmx", "Level2")
+    ));
     
     private GameScreen gameScreen;
     private int currentLevel;
@@ -35,7 +37,7 @@ public class LevelManager {
     }
 
     public boolean nextLevel() {
-        if(LEVELS.size <= ++currentLevel) { return false; }
+        if(LEVELS.size() <= ++currentLevel) { return false; }
         tileMapManager.setMap(LEVELS.get(currentLevel).getMapPath());
         return true;
     }
@@ -47,7 +49,7 @@ public class LevelManager {
     }
 
     public boolean setLevel(int levelNum) {
-        if(LEVELS.size <= levelNum) { return false; }
+        if(LEVELS.size() <= levelNum) { return false; }
         tileMapManager.setMap(LEVELS.get(levelNum).getMapPath());
         return true;
     }
