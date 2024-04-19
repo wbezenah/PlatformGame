@@ -21,11 +21,7 @@ public class LevelManager {
     public static final List<MapInfo> LEVELS = Collections.unmodifiableList(Arrays.asList(
             new MapInfo("map/map_0.tmx", "Level1"),
             new MapInfo("map/map_1.tmx", "Level2")
-<<<<<<< HEAD
-    });
-=======
     ));
->>>>>>> 15fc3ec2d688db36d8f072e411eedbd887e2162e
     
     private GameScreen gameScreen;
     private int currentLevel;

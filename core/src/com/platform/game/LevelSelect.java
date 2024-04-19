@@ -30,7 +30,7 @@ public class LevelSelect implements Screen{
         Gdx.input.setInputProcessor(stage);
         Skin neon = new Skin(Gdx.files.internal("skin/quantum-horizon-ui.json"));
         levels = new ArrayList<Button>();
-        for(int i = 0; i < LevelManager.LEVELS.size; i++){
+        for(int i = 0; i < LevelManager.LEVELS.size(); i++){
             System.out.println(LevelManager.LEVELS.get(i).getMapName());
             levels.add(new TextButton(LevelManager.LEVELS.get(i).getMapName(), neon));
             levels.get(i).setSize(BUTTONWIDTH, BUTTONHEIGHT);
