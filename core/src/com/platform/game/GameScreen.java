@@ -16,6 +16,7 @@ import com.badlogic.gdx.utils.Array;
 
 import objects.Player;
 import objects.Token;
+import objects.Crab;
 
 public class GameScreen implements Screen {
     private PlatformGame game;
@@ -27,6 +28,7 @@ public class GameScreen implements Screen {
     TouchControl touchControl;
     private Player player;
     private Token token;
+    private Crab crab;
     boolean gameOver = false;
     private boolean nextLevel = false;
 
@@ -58,6 +60,7 @@ public class GameScreen implements Screen {
     public LevelManager getLevelManager() { return levelManager; }
     public void setPlayer(Player player) { this.player = player; }
     public void setToken(Token token) { this.token = token; }
+    public void setCrab(Crab crab) { this.crab = crab; }
 
     @Override
     public void show() {
@@ -77,6 +80,7 @@ public class GameScreen implements Screen {
 
         game.batch.begin();
         player.render(game.batch);
+        crab.render(game.batch);
         game.batch.end();
 
         touchControl.render(game.shapeRenderer);
@@ -106,7 +110,7 @@ public class GameScreen implements Screen {
         game.batch.setProjectionMatrix(camera.combined);
         levelManager.orthogonalTiledMapRenderer.setView(camera);
 
-        if(!gameOver) { player.update(); }
+        if(!gameOver) { player.update(); crab.update(); }
 
         if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
             Gdx.app.exit();
