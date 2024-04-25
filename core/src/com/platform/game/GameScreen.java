@@ -14,9 +14,13 @@ import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
 
+import java.util.ArrayList;
+
 import objects.Player;
+import objects.RightGauser;
 import objects.Token;
 import objects.Crab;
+import objects.RightGauser;
 
 public class GameScreen implements Screen {
     private PlatformGame game;
@@ -28,7 +32,8 @@ public class GameScreen implements Screen {
     TouchControl touchControl;
     private Player player;
     private Token token;
-    private Crab crab;
+    private ArrayList<Crab> crab;
+    private ArrayList<RightGauser> rightGauser;
     boolean gameOver = false;
     private boolean nextLevel = false;
 
@@ -45,6 +50,9 @@ public class GameScreen implements Screen {
         this.camera.setToOrtho(false, game.getWidth(), game.getHeight());
         this.touchControl = new TouchControl(game.getWidth(), game.getHeight());
 
+        crab = new ArrayList<Crab>();
+        rightGauser = new ArrayList<RightGauser>();
+
         this.world = new World(new Vector2(0, -9.8f), false);
         this.box2DDebugRenderer = new Box2DDebugRenderer();
 
@@ -52,6 +60,7 @@ public class GameScreen implements Screen {
         this.playerContactListener = new PlayerContactListener(this);
 
         this.world.setContactListener(playerContactListener);
+
     }
 
     public World getWorld() {
@@ -60,7 +69,8 @@ public class GameScreen implements Screen {
     public LevelManager getLevelManager() { return levelManager; }
     public void setPlayer(Player player) { this.player = player; }
     public void setToken(Token token) { this.token = token; }
-    public void setCrab(Crab crab) { this.crab = crab; }
+    public void addCrab(Crab crab) { this.crab.add(crab); }
+    public void addRightGauser(RightGauser rightGauser) { this.rightGauser.add(rightGauser); }
 
     @Override
     public void show() {
@@ -80,7 +90,12 @@ public class GameScreen implements Screen {
 
         game.batch.begin();
         player.render(game.batch);
-        crab.render(game.batch);
+        for(int i = 0; i < crab.size(); i++){
+            crab.get(i).render(game.batch);
+        }
+        for(int i = 0; i < rightGauser.size(); i++){
+            rightGauser.get(i).render(game.batch);
+        }
         game.batch.end();
 
         touchControl.render(game.shapeRenderer);
@@ -110,7 +125,15 @@ public class GameScreen implements Screen {
         game.batch.setProjectionMatrix(camera.combined);
         levelManager.orthogonalTiledMapRenderer.setView(camera);
 
-        if(!gameOver) { player.update(); crab.update(); }
+        if(!gameOver) {
+            player.update();
+            for(int i = 0; i < crab.size(); i++){
+                crab.get(i).update();
+            }
+            for(int i = 0; i < rightGauser.size(); i++){
+                rightGauser.get(i).update();
+            }
+        }
 
         if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
             Gdx.app.exit();
