@@ -47,6 +47,7 @@ public class LevelSelect implements Screen{
                 @Override
                 public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
                     game.setScreen(new GameScreen(game, levNum));
+                    stage.dispose();
                     dispose();
                     return true;
                 }

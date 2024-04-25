@@ -22,6 +22,7 @@ import java.util.Objects;
 
 import objects.Player;
 import objects.Token;
+import objects.Crab;
 
 public class TileMapManager {
     private TiledMap tiledMap;
@@ -72,10 +73,18 @@ public class TileMapManager {
                         gameScreen.setPlayer(new Player(rectangle.getWidth(), rectangle.getHeight(), body, gameScreen.touchControl));
                         break;
 
+
                     case "token":
                         pos = new Vector2(rectangle.getX() + rectangle.getWidth() / 2, rectangle.getY() + rectangle.getHeight() / 2);
                         body = BodyManager.createBody(pos, rectangle.getWidth(), rectangle.getHeight(), true, gameScreen.getWorld());
                         gameScreen.setToken(new Token(rectangle.getWidth(), rectangle.getHeight(), body));
+                        break;
+
+                    case "crab":
+                        pos = new Vector2(rectangle.getX() + rectangle.getWidth() / 2, rectangle.getY() + rectangle.getHeight() / 2);
+                        body = BodyManager.createBody(pos, rectangle.getWidth(), rectangle.getHeight(), false, gameScreen.getWorld());
+                        gameScreen.setCrab(new Crab(rectangle.getWidth(), rectangle.getHeight(), body));
+                        break;
                 }
             }
         }
