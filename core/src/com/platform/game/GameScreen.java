@@ -120,7 +120,9 @@ public class GameScreen implements Screen {
             destroyBodies();
             crab.clear();
             rightGauser.clear();
-            levelManager.setLevel(setLevel);
+            if(!levelManager.setLevel(setLevel)) {
+                game.setScreen(new MainMenuScreen(game));
+            };
             setLevel = -1;
         }
         world.step(1 / 60f, 6, 2);
@@ -138,17 +140,14 @@ public class GameScreen implements Screen {
                 rightGauser.get(i).update();
             }
         }
-
-        if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
-            Gdx.app.exit();
-        }
     }
 
     private void cameraUpdate() {
-        Vector3 cameraPos = camera.position;
-        cameraPos.x = Math.round(player.getBody().getPosition().x * PPM * 10) / 10f;
-        cameraPos.y = Math.round(player.getBody().getPosition().y * PPM * 10) / 10f;
-        camera.position.set(cameraPos);
+        Vector2 playerPos = player.getPos();
+        Vector2 mapDim = levelManager.tileMapManager.getTiledMapDimension();
+        float cameraX = Math.min(Math.max(playerPos.x, camera.viewportWidth / 2.0f), mapDim.x - camera.viewportWidth / 2.0f);
+        float cameraY = Math.min(Math.max(playerPos.y, camera.viewportHeight / 2.0f), mapDim.y - camera.viewportHeight / 2.0f);
+        camera.position.set(cameraX, cameraY, 0);
         camera.update();
     }
 

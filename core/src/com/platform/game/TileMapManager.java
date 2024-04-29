@@ -5,6 +5,7 @@ import static com.platform.game.Constants.PPM;
 
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapObjects;
+import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.maps.objects.PolygonMapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -36,6 +37,20 @@ public class TileMapManager {
 
     public OrthogonalTiledMapRenderer getOrthogonalTiledMapRenderer() {
         return this.orthogonalTiledMapRenderer;
+    }
+
+    public Vector2 getTiledMapDimension() {
+        MapProperties prop = tiledMap.getProperties();
+
+        int mapWidth = prop.get("width", Integer.class);
+        int mapHeight = prop.get("height", Integer.class);
+        int tilePixelWidth = prop.get("tilewidth", Integer.class);
+        int tilePixelHeight = prop.get("tileheight", Integer.class);
+
+        int mapPixelWidth = mapWidth * tilePixelWidth;
+        int mapPixelHeight = mapHeight * tilePixelHeight;
+
+        return new Vector2(mapPixelWidth, mapPixelHeight);
     }
 
     public void init(String mapPath) {
