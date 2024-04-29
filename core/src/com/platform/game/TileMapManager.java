@@ -101,6 +101,7 @@ public class TileMapManager {
         BodyDef staticBodyDef = new BodyDef();
         staticBodyDef.type = BodyDef.BodyType.StaticBody;
         Body body = gameScreen.getWorld().createBody(staticBodyDef);
+        body.setUserData(object.getName());
 
         Shape shape = createPolygonShape(object);
         body.createFixture(shape, 1000);

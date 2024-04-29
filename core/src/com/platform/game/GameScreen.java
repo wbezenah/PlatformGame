@@ -35,7 +35,7 @@ public class GameScreen implements Screen {
     private ArrayList<Crab> crab;
     private ArrayList<RightGauser> rightGauser;
     boolean gameOver = false;
-    private boolean nextLevel = false;
+    private int setLevel = -1;
 
     public GameScreen(PlatformGame game, int initialLevel) {
         init(game, initialLevel);
@@ -112,12 +112,16 @@ public class GameScreen implements Screen {
             }
         }
     }
-    public void queueNextLevel() { nextLevel = true; }
+    public void queueSetLevel(int levelNum) {
+        setLevel = levelNum;
+    }
     private void update() {
-        if(nextLevel) {
+        if(setLevel >= 0) {
             destroyBodies();
-            levelManager.nextLevel();
-            nextLevel = false;
+            crab.clear();
+            rightGauser.clear();
+            levelManager.setLevel(setLevel);
+            setLevel = -1;
         }
         world.step(1 / 60f, 6, 2);
         cameraUpdate();

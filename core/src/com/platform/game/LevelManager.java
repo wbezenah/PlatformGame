@@ -24,7 +24,7 @@ public class LevelManager {
     ));
     
     private GameScreen gameScreen;
-    private int currentLevel;
+    public int currentLevel;
     public TileMapManager tileMapManager;
     public OrthogonalTiledMapRenderer orthogonalTiledMapRenderer;
 
@@ -44,12 +44,13 @@ public class LevelManager {
 
     public boolean prevLevel() {
         if(currentLevel == 0) { return false; }
-        tileMapManager.setMap(LEVELS.get(currentLevel).getMapPath());
+        tileMapManager.setMap(LEVELS.get(--currentLevel).getMapPath());
         return true;
     }
 
     public boolean setLevel(int levelNum) {
         if(LEVELS.size() <= levelNum) { return false; }
+        currentLevel = levelNum;
         tileMapManager.setMap(LEVELS.get(levelNum).getMapPath());
         return true;
     }
