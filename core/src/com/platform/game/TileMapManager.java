@@ -105,7 +105,13 @@ public class TileMapManager {
                     case "right_geyser":
                         pos = new Vector2(rectangle.getX() + rectangle.getWidth() / 2, rectangle.getY() + rectangle.getHeight() / 2);
                         body = BodyManager.createBody(pos, rectangle.getWidth(), rectangle.getHeight(), true, gameScreen.getWorld());
-                        gameScreen.addRightGauser(new RightGauser(rectangle.getWidth(), rectangle.getHeight(), body));
+                        gameScreen.addRightGauser(new RightGauser(rectangle.getWidth(), rectangle.getHeight(), body, -1));
+                        break;
+
+                    case "left_geyser":
+                        pos = new Vector2(rectangle.getX() + rectangle.getWidth() / 2, rectangle.getY() + rectangle.getHeight() / 2);
+                        body = BodyManager.createBody(pos, rectangle.getWidth(), rectangle.getHeight(), true, gameScreen.getWorld());
+                        gameScreen.addRightGauser(new RightGauser(rectangle.getWidth(), rectangle.getHeight(), body, 1));
                         break;
                 }
             }
