@@ -37,7 +37,7 @@ public class RightGauser extends Entity{
     @Override
     public void update() {
         bubbleTimer++;
-        if(bubbleTimer == 400){
+        if(bubbleTimer == 700){
             bubbleTimer = 0;
             makeBubble();
         }

@@ -6,6 +6,7 @@ import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Manifold;
 
 import objects.Crab;
+import objects.Bubble;
 import objects.Player;
 import objects.Token;
 
@@ -30,6 +31,9 @@ public class PlayerContactListener implements ContactListener {
                 }
             }
             else if(userDataB instanceof Crab || userDataA instanceof Crab) {
+                gameScreen.queueSetLevel(gameScreen.getLevelManager().currentLevel);
+            }
+            else if(userDataB instanceof Bubble || userDataA instanceof Bubble) {
                 gameScreen.queueSetLevel(gameScreen.getLevelManager().currentLevel);
             }
         }
