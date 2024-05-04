@@ -94,7 +94,7 @@
   <object id="46" x="2176" y="1152">
    <polygon points="0,0 64,0 64,1216 0,1216"/>
   </object>
-  <object id="47" name="player" x="128" y="2368" width="64" height="64"/>
+  <object id="47" name="player" x="256" y="2368" width="64" height="64"/>
   <object id="48" name="token" x="2368" y="1920" width="64" height="64"/>
   <object id="50" x="256" y="1280">
    <polygon points="0,0 384,0 384,64 0,64"/>
