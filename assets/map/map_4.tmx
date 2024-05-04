@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="64" tileheight="64" infinite="0" nextlayerid="3" nextobjectid="62">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="64" tileheight="64" infinite="0" nextlayerid="3" nextobjectid="93">
  <tileset firstgid="1" source="colors.tsx"/>
  <layer id="1" name="Tile Layer 1" width="40" height="40">
   <data encoding="base64" compression="zlib">
-   eJztltEOgCAIRbV/6P9/tfnKQi8WQnbPxoNt6CkwLYUQQgghZE+qEt65Fr9DhMVvNvcrfloNIoN+7/vJPlkRct2eXwSIS7TfOXBB/azvgM5ZO2Pt2ayTlVX11fYekjeaI7r/5Bj16zmj32v0f3vaf6vZwc/7PJk93zKQ3a+R8f4iXe78MpDdr+FRX2Quy3p/8/PaL5m5ABPiAg0=
+   eJztlkEOgCAMBNU/+P+vGg5emlK2CNKSnaQHSLEjiHAchBBCCCF7clZi9liP3yXC49c7NotfbQ1WBv3G+/2NVpN+OKXmDbigft53aOWjLpbfzHm19qnW/7WW9zkZvj+tD/WznJH5av3brD7EbwU7+L1tee8YFVnON43ofoWI9xfpovlFILpfoWd9ZS7atnK8+zez36r9EpkH9VoBwA==
   </data>
  </layer>
- <objectgroup id="2" name="objects">
+ <objectgroup id="2" name="objects" opacity="0.41">
   <object id="2" x="192" y="2176">
    <polygon points="0,0 0,128 64,128 64,0"/>
   </object>
@@ -25,29 +25,8 @@
   <object id="13" x="2368" y="1920">
    <polygon points="0,0 0,-256 64,-256 64,0"/>
   </object>
-  <object id="14" x="2304" y="1600">
-   <polygon points="0,0 0,64 64,64 64,0"/>
-  </object>
   <object id="15" x="2368" y="1344">
    <polygon points="0,0 0,256 64,256 64,0"/>
-  </object>
-  <object id="16" x="2112" y="1728">
-   <polygon points="0,0 128,0 128,64 0,64"/>
-  </object>
-  <object id="17" x="2176" y="1536">
-   <polygon points="0,0 -64,0 -64,192 0,192"/>
-  </object>
-  <object id="18" x="2176" y="1536">
-   <polygon points="0,0 64,0 64,-64 0,-64"/>
-  </object>
-  <object id="19" x="2176" y="1472">
-   <polygon points="0,0 0,-128 -64,-128 -64,0"/>
-  </object>
-  <object id="20" x="2112" y="1472">
-   <polygon points="0,0 0,64 64,64 64,0"/>
-  </object>
-  <object id="21" x="1600" y="1728">
-   <polygon points="0,0 384,0 384,64 0,64"/>
   </object>
   <object id="22" x="1536" y="1472">
    <polygon points="0,0 64,0 64,64 0,64"/>
@@ -67,30 +46,16 @@
   <object id="27" x="768" y="1472">
    <polygon points="0,0 0,64 64,64 64,0"/>
   </object>
-  <object id="28" name="danger" x="256" y="1280">
-   <polygon points="0,0 1856,0 1856,64 0,64"/>
-  </object>
-  <object id="29" name="danger" x="2176" y="1280">
-   <polygon points="0,0 192,0 192,64 0,64"/>
-  </object>
   <object id="30" name="danger" x="512" y="1920">
    <polygon points="0,0 1408,0 1408,64 0,64"/>
   </object>
-  <object id="32" name="token" x="2176" y="1408" width="64" height="64"/>
   <object id="33" name="left_geyser" x="256" y="2240" width="64" height="64"/>
-  <object id="34" name="right_geyser" x="2368" y="2240" width="64" height="64"/>
   <object id="37" name="player" x="384" y="2240" width="64" height="64"/>
-  <object id="39" name="crab" x="1600" y="1664" width="64" height="64"/>
+  <object id="39" name="crab" x="1536" y="1664" width="64" height="64"/>
   <object id="42" x="2368" y="1984">
    <polygon points="0,0 0,64 64,64 64,0"/>
   </object>
   <object id="43" name="right_geyser" x="2368" y="2048" width="64" height="64"/>
-  <object id="50" x="256" y="2304">
-   <polygon points="0,0 960,0 960,128 0,128"/>
-  </object>
-  <object id="51" x="1344" y="2304">
-   <polygon points="0,0 448,0 448,128 0,128"/>
-  </object>
   <object id="53" x="1216" y="2432">
    <polygon points="0,0 128,0 128,64 0,64"/>
   </object>
@@ -108,6 +73,61 @@
   </object>
   <object id="59" x="2432" y="2048">
    <polygon points="0,0 64,0 64,64 0,64"/>
+  </object>
+  <object id="62" x="256" y="2304">
+   <polygon points="0,0 448,0 448,128 0,128"/>
+  </object>
+  <object id="63" x="832" y="2304">
+   <polygon points="0,0 128,0 128,128 0,128"/>
+  </object>
+  <object id="64" x="1088" y="2304">
+   <polygon points="0,0 128,0 128,128 0,128"/>
+  </object>
+  <object id="65" x="1344" y="2304">
+   <polygon points="0,0 128,0 128,128 0,128"/>
+  </object>
+  <object id="66" x="1664" y="2304">
+   <polygon points="0,0 128,0 128,128 0,128"/>
+  </object>
+  <object id="67" x="704" y="2432">
+   <polygon points="0,0 960,0 960,64 0,64"/>
+  </object>
+  <object id="70" name="token" x="2112" y="1408" width="64" height="64"/>
+  <object id="73" x="2368" y="1344">
+   <polygon points="0,0 64,0 64,256 0,256"/>
+  </object>
+  <object id="74" x="2112" y="1472">
+   <polygon points="0,0 64,0 64,64 0,64"/>
+  </object>
+  <object id="75" x="2112" y="1536">
+   <polygon points="0,0 -64,0 -64,192 0,192"/>
+  </object>
+  <object id="77" x="2048" y="1280">
+   <polygon points="0,0 0,192 64,192 64,0"/>
+  </object>
+  <object id="78" x="256" y="1280">
+   <polygon points="0,0 0,-64 1792,-64 1792,0"/>
+  </object>
+  <object id="81" x="2048" y="1472">
+   <polygon points="0,0 64,0 64,64 0,64"/>
+  </object>
+  <object id="85" x="1536" y="1728">
+   <polygon points="0,0 384,0 384,64 0,64"/>
+  </object>
+  <object id="86" x="2304" y="1536">
+   <polygon points="0,0 64,0 64,64 0,64"/>
+  </object>
+  <object id="89" x="2368" y="1600">
+   <polygon points="0,0 0,320 64,320 64,0"/>
+  </object>
+  <object id="90" x="2368" y="1280">
+   <polygon points="0,0 -256,0 -256,-64 0,-64"/>
+  </object>
+  <object id="91" x="2048" y="1728">
+   <polygon points="0,0 192,0 192,64 0,64"/>
+  </object>
+  <object id="92" x="2112" y="1536">
+   <polygon points="0,0 0,192 -64,192 -64,0"/>
   </object>
  </objectgroup>
 </map>
