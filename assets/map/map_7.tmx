@@ -3,7 +3,7 @@
  <tileset firstgid="1" source="colors.tsx"/>
  <layer id="1" name="Tile Layer 1" width="40" height="40">
   <data encoding="base64" compression="zlib">
-   eJzd1EsOxSAIBVDbPXT/W30jk4aAXH4WH4kTB/UUvI7Rv66m6zQfUvcBPsQYLa9vGrv7dszZ67MYb2B5fO9va8bVGdo/VPoQZ+QeSD5pNohzh2/ucXfl332RfNC9Hf3LyAfq7OTjjNy8pPMj79/qrlh7qL3LO/vH+SIr6pNmjPZf6y31Ifm1+Dr0jxq7+6gRnWVFflHfqkeV+c3wdZhvli8jv5W+QfY8Ns2XkY+Ij/Nk5wPJr1Q7fGP4fNy8pPOr52vxrd5li8+SX8nnzWp1/6y901bEx1V27yL5/do39yKz/dr3FNuk/HZap/g61w9f1wXr
+   eJzd1jsOg0AMBFBCEYpUKXL/qyYlstbr8Xe9QXILjzEDHEf/49F0dvO9gDk38CFG5FyzsfrQDFf7KvZs9WmMJzAW3/3cknF2DekeMn2I0/MccD5uN5beZPhofqjxH3yeftAdV+QX0Q/U2ck3Mo72xV3f8/6bPSvaDKX3cmV+6Lc5s7/IjtH8pWypD+mvxtchP2rs7rPsOKu/qG+WUWZ/I3wd9hvli+hvp/yQ/wTqi+hH5Pcjox9If9F/rFX95WyoL3u/Gt/svazxafqb/e8SnZ82O2k8vorsPP1d7ZPyuwa2St9T8L1/80m2cf3tNLv4Oh9ffgATAw==
   </data>
  </layer>
  <objectgroup id="2" name="objects">
