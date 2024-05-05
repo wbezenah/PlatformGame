@@ -3,14 +3,14 @@
  <tileset firstgid="1" source="colors.tsx"/>
  <layer id="1" name="Tile Layer 1" width="40" height="40">
   <data encoding="base64" compression="zlib">
-   eJztlFEKgEAIRGvv0P2vGv2FuKOTbkTMgyUqtZeyu21CCCGEEEII8R77B1bkNxr+MRPzVz8m/qkfcuyojXLYGqv9OmtU/Ji5sTkXRyJ+9t7rPYplqM6X3SvRDKrnH6qX9Yvm0OHn5Q6wsu7oebV/A3gzfrZfXfMd4Jqt59WdxXv10B5Z0T/bx0z+237R9xk/62j3R7R/rZ93j/xm/5X1i+pH3ozf3QedLdlVPf/Ec04psAFX
+   eJztlTsKxDAMRGMXm2KrFLn/VddFiiD0V7SkmIHBBGzrIcnKtkEQBEEQBEEQBP1P4wW2+ObyvvxNejj3VPiO5c/lt/FRd/BpjBZflSd6RzdfNn/S2SxfpG4Z1rPAx/WitlfjoO+uWt/oW7FqUJ1/2n2Rfu/m485OxZX+H2T18HGMU+GO8NF8PVXfqayeXuR47kze/4fUNx35o3m0+LS+7uK7x6/yUUb6PqQa7AIf963xcfMkwifN5EOJH6kvF9uaLV5X5x+U1w+GFw3k
   </data>
  </layer>
  <objectgroup id="2" name="objects">
   <object id="22" x="128" y="2304">
    <polygon points="0,0 192,0 192,128 0,128"/>
   </object>
-  <object id="23" x="320" y="2368">
+  <object id="23" name="danger" x="320" y="2368">
    <polygon points="0,0 128,0 128,64 0,64"/>
   </object>
   <object id="24" x="128" y="2304">
@@ -19,7 +19,7 @@
   <object id="25" x="128" y="1536">
    <polygon points="0,0 256,0 256,-64 0,-64"/>
   </object>
-  <object id="26" x="128" y="1472">
+  <object id="26" name="danger" x="128" y="1472">
    <polygon points="0,0 64,0 64,-128 0,-128"/>
   </object>
   <object id="27" x="192" y="1344">
@@ -52,10 +52,10 @@
   <object id="37" x="1920" y="1792">
    <polygon points="0,0 -320,0 -320,640 256,640 256,0"/>
   </object>
-  <object id="38" x="1600" y="2368">
+  <object id="38" name="danger" x="1600" y="2368">
    <polygon points="0,0 -576,0 -576,64 0,64"/>
   </object>
-  <object id="39" x="1024" y="2368">
+  <object id="39" name="danger" x="1024" y="2368">
    <polygon points="0,0 0,-448 -448,-448 -448,0"/>
   </object>
   <object id="40" x="1152" y="2240">

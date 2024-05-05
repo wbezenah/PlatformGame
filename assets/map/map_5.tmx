@@ -3,7 +3,7 @@
  <tileset firstgid="1" source="colors.tsx"/>
  <layer id="1" name="Tile Layer 1" width="40" height="40">
   <data encoding="base64" compression="zlib">
-   eJztlkESgCAIRc07dP+rtmrjaOAHAY0340ZDnjqYpSRJkiRXoLaznycn+Hk6Rt6/m3Cw8mtzaNeH9hqQ+8Uayf7NOFPzc2IRPytQv2rUZv3+/n9D/CI4fn0nzSOJjXa+vfyc8/Xy5PpVRhy1jnZ8NAfi13NcgcTPwlHqZ30fR65fymEXP++7BfF73xer+9D66L2BtPo0/LzqeSe/5Dwe3Z0B8w==
+   eJztltEKwyAMRW0H9WFdoQ/9/1/dHgyIxGDUJlnJhUtBjT2NTTAEl8vlcr0MGdMn+fh5Rwzze7HmyOapuHzvWgyMY1qS34rekq3yAQPFp8nYwqfFdhnhK9+xIB7hm/0NXD6NMx7JH4eZWkvtEQf57sob9LszPXv5ViFz+bB/V8Kc/EnWhcX6lcrfSLzV860xUnyanK18ayWOc57lfG2PHj6MMXecmK9ePoyx7PebMp+UOXxa9fsUPu3e0sMH94u7xmJov7/U6ri8A80ag34wwiftf+RzPU9fOHgdMg==
   </data>
  </layer>
  <objectgroup id="2" name="objects">

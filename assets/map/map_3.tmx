@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="64" tileheight="64" infinite="0" nextlayerid="3" nextobjectid="71">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="64" tileheight="64" infinite="0" nextlayerid="3" nextobjectid="72">
  <tileset firstgid="1" source="colors.tsx"/>
  <layer id="1" name="Tile Layer 1" width="40" height="40">
   <data encoding="base64" compression="zlib">
-   eJztlksOgCAMBdE7eP+ruiUNpb9XQdJJWGCkDCCtrRVFURTFmVybtt5vN8ovBtoPvcbys42l41F+o3zgjcP1V+/faDznJ+VKbXwaT3ru3T8a52aa1W/0HsIvC8kvun4Pfezo/mlr+cxBcrX4We/HbF6En/aeoUDe3y9Y5Yf8/qQ66EGbGxD3N5M+/tPsftnQM5TqL9ePzD/Lndn1DZEnuX7W+VrGrqofWk734/77UI3OwdXfndofeAH6UwFV
+   eJztl90KwyAMhXWDerGu4MXe/1XXwWQSTFuTk9ZBDpwb26Sfxp8agsvlcrlcMt0HddGTeFk9N1yez+SdpXq+FVfn5mLq9qJp9WMwp4ovgvIh+TKYL4P5IpgPkcP55LE0HsUXmfza/o00fj18kbGUj4un7dLxo3lujHv5UPVFzC1EfbX9lzLFcIxvL8eetePfy9e7Pqz5jq4zi9pq62sx97T1RfEh5x93DlrxodfvWfV9CfjOmn/1eLT4WusK9f+wtXdan2+IfdKSTxt71flRO4X2PS8NwPe5Y+evp/C7c5d2LR/334cy/QZ3/o7kf9AbuCAk8w==
   </data>
  </layer>
  <objectgroup id="2" name="objects">
@@ -126,5 +126,8 @@
   <object id="68" name="left_geyser" x="640" y="1856" width="64" height="64"/>
   <object id="69" name="left_geyser" x="1600" y="1472" width="64" height="64"/>
   <object id="70" name="left_geyser" x="1600" y="1216" width="64" height="64"/>
+  <object id="71" x="2432" y="768">
+   <polygon points="0,0 64,0 64,1600 0,1600"/>
+  </object>
  </objectgroup>
 </map>
