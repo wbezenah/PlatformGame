@@ -24,7 +24,8 @@ public class LevelManager {
             new MapInfo("map/map_2.tmx", "Level3"),
             new MapInfo("map/map_3.tmx", "Level4"),
             new MapInfo("map/map_4.tmx", "Level5"),
-            new MapInfo("map/map_5.tmx", "Level6")
+            new MapInfo("map/map_5.tmx", "Level6"),
+            new MapInfo("map/map_6.tmx", "Level7")
     ));
     
     private GameScreen gameScreen;
